@@ -1,0 +1,28 @@
+{
+  "name": "188win",
+  "version": "1.0.0",
+  "description": "## Bài tập lớn môn phát triển dự án phần mềm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanngoc1406/188win-PTDAPM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanngoc1406/188win-PTDAPM/issues"
+  },
+  "homepage": "https://github.com/hanngoc1406/188win-PTDAPM#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.2",
+    "mongoose-sequence": "^5.3.1",
+    "socket.io": "^4.6.0"
+  }
+}
