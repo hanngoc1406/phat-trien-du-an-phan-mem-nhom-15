@@ -83,8 +83,7 @@ function roundCounter(roundNo) {
 createNewRound();
 
 // mongoose connection
-// ducpa:b7Oj2fqzmFGsLr0i
-mongoose.connect('mongodb+srv://ducpa:b7Oj2fqzmFGsLr0i@atlascluster.47alvvh.mongodb.net/188win?retryWrites=true&w=majority', function(e) {
+mongoose.connect('mongodb+srv://<taikhoan>:<matkhau>@atlascluster.47alvvh.mongodb.net/188win?retryWrites=true&w=majority', function(e) {
     if(e) {
         console.log("Loi: ", e.message);
     } else {
