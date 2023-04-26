@@ -17,6 +17,7 @@ const roundData = new mongoose.Schema({
     result: Number,
     // ngay khoi tao
     dateCreated: Date,
+    player_money: Number
 });
 
 roundData.plugin(AutoIncrement, {inc_field: "roundNumber"});

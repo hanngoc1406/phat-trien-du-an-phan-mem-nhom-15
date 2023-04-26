@@ -282,14 +282,13 @@ var socket = io();
 socket.on('gameData', function (data) {
     const round = JSON.parse(data);
     // idGame.innerHTML         = '#' + round.id;
-    // soNguoiChonTai.innerHTML = data;
-    // soNguoiChonXiu.innerHTML = data.soNguoiChonXiu;
-
     if(round.time_counter != undefined) {
         var tienTai = round.big_fake_monney
         var tienXiu = round.small_fake_money
         tongTienDatTai.innerHTML = tienTai + 'k';
         tongTienDatXiu.innerHTML = tienXiu +'k';
+        soNguoiChonTai.innerHTML = round.big_player;
+        soNguoiChonXiu.innerHTML = round.small_player;
         time.innerHTML = round.time_counter == 0 ? '' : '0' + round.time_counter;
     }
     console.log(round.time_counter);

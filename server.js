@@ -14,8 +14,7 @@ var currentRoundNumber = null;
 let dices = {
     dice1: Number,
     dice2: Number,
-    dice3: Number,
-    total: String
+    dice3: Number
 }
 
 // Tao van choi moi
@@ -29,6 +28,7 @@ function createNewRound() {
         small_player: 0,
         big_player: 0,
         result: -1,
+        player_money: 1000,
         dateCreated: Date.now(),
     });
     newRound.save(function(e) {
@@ -50,6 +50,8 @@ function roundCounter(roundNo) {
                 round.time_counter--;
                 round.small_fake_money += Math.floor(Math.random() * 1000);
                 round.big_fake_monney += Math.floor(Math.random() * 1000);
+                round.small_player = round.small_player + Math.floor(1 + Math.random()*(3));
+                round.big_player = round.big_player + Math.floor(1 + Math.random()*(3));
                 console.log("Van so: " + roundNo + ", thoi gian con lai: ", round.time_counter);
                 io.sockets.emit("gameData", JSON.stringify(round));
                 round.save((eSave) => {
@@ -83,7 +85,7 @@ function roundCounter(roundNo) {
 createNewRound();
 
 // mongoose connection
-mongoose.connect('mongodb+srv://<taikhoan>:<matkhau>@atlascluster.47alvvh.mongodb.net/188win?retryWrites=true&w=majority', function(e) {
+mongoose.connect('mongodb+srv://ducpa:b7Oj2fqzmFGsLr0i@atlascluster.47alvvh.mongodb.net/188win?retryWrites=true&w=majority', function(e) {
     if(e) {
         console.log("Loi: ", e.message);
     } else {
